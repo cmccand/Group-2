@@ -1,6 +1,6 @@
 var DrinkCollection = Backbone.Collection.extend({
 
-    url: 'http://localhost:9000',
+    url: 'https://secret-shelf-4422.herokuapp.com/',
     initialize: function(){
         console.log('collection works..or not');
     }
