@@ -9,7 +9,8 @@ article {
   margin: 0 auto; }
   @media screen and (min-width: 375px) and (max-width: 667px) {
     article {
-      width: 60%; } }
+      width: 70vw;
+      height: auto; } }
   article img {
     max-width: 50vw;
     height: auto;
