@@ -2,11 +2,18 @@
   font-family: 'sipster';
   src: url(SUNN.otf); }
 article {
-  width: 35%;
-  padding-left: 32%; }
+  width: 50vw;
+  height: 40vh;
+  max-height: 40vh;
+  text-align: center;
+  margin: 0 auto; }
+  @media screen and (min-width: 375px) and (max-width: 667px) {
+    article {
+      width: 60%; } }
   article img {
-    width: 100%;
-    height: 200px; }
+    max-width: 50vw;
+    height: auto;
+    max-height: 60vh; }
 
 .wordone {
   color: #B1E6EB; }
@@ -15,7 +22,7 @@ article {
   color: black; }
 
 h3 {
-  font-size: 30px; }
+  font-size: 4vw; }
 
 body, h1, h2, h3, h4, h5, p, a {
   margin: 0;
@@ -24,7 +31,7 @@ body, h1, h2, h3, h4, h5, p, a {
 header {
   width: 100%;
   text-align: center;
-  padding-top: 10vh;
+  padding-top: 5vh;
   display: block; }
   header #home {
     display: block;
@@ -47,7 +54,7 @@ header {
       padding-right: .5vw; }
   header h1 {
     font-family: 'sipster';
-    font-size: 20vw;
+    font-size: 18vw;
     text-align: center;
     margin: 0 auto;
     color: #1c1c1c;
@@ -102,6 +109,9 @@ h2 {
     margin: 0 auto;
     z-index: 1000;
     font-size: 5vw; }
+
+#inspired h3 {
+  left: 34%; }
 
 .chosenOne {
   animation: rise 2s forwards;
