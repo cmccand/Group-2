@@ -14,6 +14,10 @@ article {
     max-width: 50vw;
     height: auto;
     max-height: 60vh; }
+    @media screen and (min-width: 375px) and (max-width: 667px) {
+      article img {
+        width: 60vw;
+        height: 85vh; } }
 
 .wordone {
   color: #B1E6EB; }
