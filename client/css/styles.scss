@@ -59,7 +59,7 @@ header{
     display:block;
     position:absolute;
     top:25%;
-/*     font-family: 'sipster'; */
+    cursor:pointer;
     font-family: 'Josefin Slab', serif;
     font-size: 2vw;
     margin: 0 auto;
@@ -68,10 +68,18 @@ header{
     border-radius:50%;
     background-color:white;
     width: 12%;
-    z-index:1000;
+    border:solid 1px black;
+    z-index:2000;
     &:hover {
       background-color:#B1E6EB;
-      cursor:pointer;
+    }
+    a {
+      font-family: 'Josefin Slab', serif;
+      font-size: 2vw;
+      margin: 0 auto;
+      text-align:center;
+      text-decoration:none;
+      color:black;
     }
     span.fa {
       font-weight:100;
