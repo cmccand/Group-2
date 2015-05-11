@@ -14,6 +14,7 @@ $(document).ready(function(){
   $('section div').on('click', 'button', function(event){
     event.preventDefault();
     $(this).fadeOut('fast');
+    $("#home").show();
     // var relatedMood = '.' + $(this).attr('rel');
     // $(this).siblings('button').addClass('chosenOne');
     // $(this).siblings('h2').fadeOut('slow');

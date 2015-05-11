@@ -53,7 +53,7 @@ header {
   padding-top: 5vh;
   display: block; }
   header #home {
-    display: block;
+    display: none;
     position: absolute;
     top: 25%;
     cursor: pointer;
