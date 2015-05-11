@@ -4,14 +4,17 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href ="css/styles.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700' rel='stylesheet' type='text/css'>
   <title>Sipster</title>
 
   <script type="text/template" id="displayTmpl">
-    <h3><span class='wordone'><%= word_one.data %></span> <span class='wordtwo'><%= word_two.data %></span></h3>
+    <h3 class='wordone'><%= word_one.data %></h3>
+    <h3 class='wordtwo'><%= word_two.data %></h3>
     <br>
     <!-- <%= shoutouts.text %> -->
     <br>
-    <img src = "<%= images.text %>">
+    <img class="drink" src = "<%= images.text %>">
   </script>
 
 </head>
@@ -19,7 +22,7 @@
 
 
   <header>
-    <button id="home" onclick="window.location='http://cmccand.github.io/Group-2/client'"><span class= "fa fa-arrow-circle-o-left"></span>Play Again</button>
+    <button id="home" onclick="window.location='http://cmccand.github.io/Group-2/client'"><span class= "fa fa-arrow-circle-o-left"></span>Again</button>
     <h1>Sipster</h1>
   </header>
 <!-- <button class='home'><a href="index.html">HOME</a></button> -->
@@ -27,18 +30,24 @@
   <!-- <h2>Pick a mood, any mood:</h2> -->
   <section class='active'>
     <div class="mood active">
-      <h2>Pick a mood, any mood:</h2>
-      <button id="happy" class="moodbtn" rel="happy"><h3>Happy</h3></button>
-      <button id="lonely" class="moodbtn" rel="lonely"><h3>Lonely</h3></button>
+<!--       <h2>Pick a mood, any mood:</h2> -->
+      <button id="happy" class="moodbtn" rel="happy"><h3>Quench</h3></button>
+      <!-- <button id="lonely" class="moodbtn" rel="lonely"><h3>Lonely</h3></button>
       <button id="inspired" class="moodbtn" rel="inspired"><h3>Inspired</h3></button>
-      <button id="dark" class="moodbtn" rel='dark'><h3>Dark</h3></button>
+      <button id="dark" class="moodbtn" rel='dark'><h3>Dark</h3></button> -->
     </div>
+    <div class="bubbly">
+      <div id="o"></div>
+    </div>
+
   </section>
+
 
 
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/backbone/backbone.js"></script>
+  <script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
 
   <script src="js/model.js"></script>
   <script src="js/collection.js"></script>
@@ -47,6 +56,7 @@
   <script src="js/template.js"></script>
   <script src="js/main.js"></script>
   <script src="js/other.js"></script>
+  <script src="main.js"></script>
 
 </body>
 </html>

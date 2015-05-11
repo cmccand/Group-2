@@ -56,7 +56,6 @@ var DrinkNameView = Backbone.View.extend({
 var DrinkNamesView= Backbone.View.extend({
   tagName: 'results',
   initialize: function() {
-    console.log("im DrinkNamesView defined!");
     this.render();
     $('section').prepend(this.el);
   },

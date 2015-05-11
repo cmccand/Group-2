@@ -1,5 +1,5 @@
 @import 'variables';
-
+@import "../bourbon/bourbon";
 
 article {
   width:50vw;
@@ -24,13 +24,25 @@ article {
 
 .wordone {
   color:#B1E6EB;
+  /* position:absolute; */
+  display:inline-block;
+  /* right:-50%; */
+  @include animation(wordone 1s .5s ease backwards);
+
 }
 .wordtwo {
   color:black;
+/*   position:absolute; */
+  display:inline-block;
+  /* right:-50%; */
+  @include animation(wordtwo 1s 1s ease backwards);
+
 }
 
 h3 {
-  font-size: 4vw;
+  font-size: 6vw;
+  font-family: 'Josefin Slab', serif;
+  padding-top: 5%;
 }
 
 body, h1, h2, h3, h4, h5, p, a {
@@ -47,14 +59,15 @@ header{
     display:block;
     position:absolute;
     top:25%;
-    font-family: 'sipster';
+/*     font-family: 'sipster'; */
+    font-family: 'Josefin Slab', serif;
     font-size: 2vw;
     margin: 0 auto;
-    margin-left: 15%;
-    padding:.5%;
-    border-radius:10%;
+    margin-left: 6%;
+    padding:.8%;
+    border-radius:50%;
     background-color:white;
-    width: 9%;
+    width: 12%;
     z-index:1000;
     &:hover {
       background-color:#B1E6EB;
@@ -67,14 +80,15 @@ header{
   }
 
   h1 {
-    font-family: 'sipster';
-    font-size: 18vw;
+    /* font-family: 'sipster'; */
+    font-family: 'Yesteryear', cursive;
+    font-size:50em;
+    font-size: 14vw;
     text-align: center;
     margin: 0 auto;
     color: $h1-font-color;
     display:block;
-    padding: 5%;
-    padding-top:0;
+    padding: 0 5% 0 5%;
     position:relative;
 
   }
@@ -87,6 +101,8 @@ section {
   display: none;
   width:80%;
   text-align:center;
+  position:relative;
+  z-index:1000;
   .mood {
     display: block;
     text-align: center;
@@ -96,7 +112,7 @@ section {
 
 h2 {
   font-size: 24px;
-  font-family: 'sipster', serif;
+  font-family: 'sipster';
   text-align: center;
   padding-top: -55px;
   padding-bottom: 41px;
@@ -104,29 +120,38 @@ h2 {
 
 }
 
+.bubbly {
+  position: absolute; z-index:-5000; width:100%;
+  #o { width: 90%; height:100vh; position: relative; z-index:-5000; margin-top:-90vh;}
+  .bubble { border: 1px solid #13A1BF; display: block; position: absolute; border-radius: 20px; -webkit-border-radius: 20px; -moz-border-radius: 20px; }
+}
+
 .moodbtn {
     text-align: center;
-    width: 32%;
+    width: 30%;
     padding-top:30%;
     height: auto;
     border-radius: 50%;
     margin: 5%;
-    font-family: 'sipster';
+    /* font-family: 'sipster'; */
+    font-family: 'Josefin Slab', serif;
     font-size: 50px;
     color: black;
-    background: linear-gradient(rgba(255,255,244,0.5), rgba(255,255,244,0.5));
-    border: 4px solid black ;
+    border: 2px solid #13A1BF;
+    background:white;
     position:relative;
+
     &:hover {
-      border: 8px double black;
-      background: linear-gradient(rgba(112,112,112,0.5), rgba(112,112,112,0.5));
+      border: 5px double black;
+    /*   background: #B1E6EB; */
       color: black;
-      @include transition(all 2s ease);
+      @include transition(all 1s ease);
+      background-color:#B1E6EB;
     }
     h3 {
       position:absolute;
       top:40%;
-      left:38%;
+      left:15%;
       text-align:center;
       margin:0 auto;
       z-index:1000;
@@ -134,59 +159,94 @@ h2 {
     }
 }
 
-#inspired {
-  h3 {
-    left:34%;
-  }
-}
 
 .chosenOne {
-  @include chosen(rise 2s forwards);
+  @include animation(rise 2s forwards);
 }
 
 .animate {
-  @include animateDown(animation 4s);
+  @include animation(animation 4s);
   opacity:0;
   transform: translateY(1000px);
 }
 
 .fadein {
-  @include fadein(fade 2s .5s backwards);
+  @include animation(fade 2s .5s backwards);
 }
 
-
+.drink {
+  @include animation(slide 1s ease backwards);
+}
 
 
 
 //KEYFRAMES
 
-@-webkit-keyframes animation{
+@include keyframes(wordone) {
+  0% {
+    @include transform(translateX(-1000%));
+  }
+  100%{
+    @include transform(translateX(0%));
+  }
+}
+
+@include keyframes(wordtwo) {
+  0% {
+    @include transform(translateX(1000%));
+  }
+  100%{
+    @include transform(translateX(0%));
+  }
+}
+
+@include keyframes(slide) {
+  0% {
+    @include transform(translateX(250%));
+  }
+  50%{
+    @include transform(translateX(-8%));
+  }
+  65%{
+    @include transform(translateX(4%));
+  }
+  80%{
+    @include transform(translateX(-4%));
+  }
+  95%{
+    @include transform(translateX(2%));
+  }
+  100% {
+    @include transform(translateX(0%));
+  }
+}
+
+
+@include keyframes(animation) {
   0%{
     opacity:100;
-    -webkit-transform: rotate(20deg);
   }
   100%
   {
     opacity:0;
-    transform: translateY(1000px);
     display:none;
   }
 }
 
 
-@-webkit-keyframes rise{
+@include keyframes(rise) {
   0%{
 
   }
   100%
   {
-    -webkit-transform: translateX(-100px);
-    -webkit-transform: translateY(-250px);
+    @include transform(translateX(-100px));
+    @include transform(translateY(-250px));
     opacity:0;
   }
 }
 
-@-webkit-keyframes fade {
+@include keyframes(fade) {
   0%{
     opacity:0;
   }
@@ -199,9 +259,9 @@ h2 {
 
 //SHOW/HIDES
 
-div{
+/* div{
   display: none;
-}
+} */
 
 .active {
   display: block;
