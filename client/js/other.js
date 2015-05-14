@@ -26,4 +26,6 @@ $(document).ready(function(){
     // $(relatedMood).parent().siblings().removeClass('active');
   });
 
+  
+
 });
